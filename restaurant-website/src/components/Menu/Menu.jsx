@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Menu.css';
+import MealItemForm from '../Meals/MealItems/MealItemForm';
+
 const Menu = () => {
   const [items, setItems] = useState([
     { id: 1, title: 'Briyani', price: 200 },
@@ -10,9 +12,14 @@ const Menu = () => {
     <div className="menu">
       {items.map((item) => {
         return (
-          <div className="menu--item">
-            <h3>{item.title}</h3>
-            <h4>INR - {item.price}</h4>
+          <div className="menu-total">
+            <div className="menu--item">
+              <h3>{item.title}</h3>
+              <h4>INR - {item.price}</h4>
+            </div>
+            <div>
+              <MealItemForm />
+            </div>
           </div>
         );
       })}

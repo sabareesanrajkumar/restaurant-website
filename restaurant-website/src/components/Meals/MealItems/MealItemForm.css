@@ -1,0 +1,18 @@
+.meals-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.meals-form button{
+    all:unset;
+}
+
+.meals-form input{
+ width:40px;
+}
+
+
+.meals-form button:hover{
+    color: rgb(15, 44, 26);
+    background-color: azure;
+}

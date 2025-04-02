@@ -10,7 +10,6 @@ const Header = () => {
         <h1>Eternal nectar</h1>
         <HeaderCartButton />
       </header>
-
       <div className="main-image">
         <img src={mealsImage} alt="restaurant" />
       </div>
