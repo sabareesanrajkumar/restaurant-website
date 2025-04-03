@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/layout/Header/Header';
 import Meals from './components/Meals/Meals';

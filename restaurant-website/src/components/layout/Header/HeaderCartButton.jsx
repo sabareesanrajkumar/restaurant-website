@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const HeaderCartButton = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
   return (
     <>
-      <button>Cart</button>
+      <button onClick={() => setIsCartOpen(true)}>Cart</button>
     </>
   );
 };

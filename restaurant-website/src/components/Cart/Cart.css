@@ -56,3 +56,15 @@
     background: #28a745;
     color: white;
   }
+  
+  .cart-icon {
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  
