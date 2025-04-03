@@ -1,28 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Menu.css';
-import MealItemForm from '../Meals/MealItems/MealItemForm';
+import MealItemForm from './MealItems/MealItemForm';
 
-const Menu = () => {
-  const [items, setItems] = useState([
+const Menu = ({ addToCart, removeFromCart, cartItems }) => {
+  const items = [
     { id: 1, title: 'Briyani', price: 200 },
     { id: 2, title: 'Fried rice', price: 250 },
-    { id: 1, title: 'Meals', price: 130 },
-  ]);
+    { id: 3, title: 'Meals', price: 130 },
+  ];
   return (
     <div className="menu">
-      {items.map((item) => {
-        return (
-          <div className="menu-total">
-            <div className="menu--item">
-              <h3>{item.title}</h3>
-              <h4>INR - {item.price}</h4>
-            </div>
-            <div>
-              <MealItemForm />
-            </div>
-          </div>
-        );
-      })}
+      <MealItemForm
+        items={items}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+        cartItems={cartItems}
+      />
     </div>
   );
 };

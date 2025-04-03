@@ -1,0 +1,40 @@
+.meals-form{
+    margin-top: 10px;
+    display: flex;
+    width:100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.meals-form button{
+  background-color: #ffffff; 
+  color: rgb(9, 9, 9);
+  border: none;
+  border-radius: 50%; 
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.meals-form input{
+ width:40px;
+}
+
+
+.meals-form button:hover{
+    background-color: #bcbbbb;
+  transform: scale(1.1);
+}
+
+.menu-total{
+    display: flex;
+    gap:30px;
+
+}

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './Cart.css';
 import eventEmitter from '../EventEmitter/EventEmitter';
 
-const Cart = () => {
+const Cart = ({ cartItems }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -21,11 +21,18 @@ const Cart = () => {
     <div className="cart-overlay">
       <div className="cart-modal">
         <h2>Your Cart</h2>
-        <ul>
-          <li>Item 1 - INR 200</li>
-          <li>Item 2 - INR 350</li>
-          <li>Item 3 - INR 150</li>
-        </ul>
+        {cartItems.length === 0 ? (
+          <p>Cart is empty</p>
+        ) : (
+          <ul>
+            {cartItems.map((item, index) => (
+              <li key={index}>
+                {item.title} - INR{item.price} x {item.quantity} = INR
+                {item.price * item.quantity}
+              </li>
+            ))}
+          </ul>
+        )}
         <div className="cart-actions">
           <button onClick={() => eventEmitter.emit('toggleCart')}>Close</button>
           <button>Order</button>
