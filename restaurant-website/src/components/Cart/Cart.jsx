@@ -1,8 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './Cart.css';
+import eventEmitter from '../EventEmitter/EventEmitter';
 
 const Cart = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const toggleCart = () => setIsOpen((prev) => !prev);
+    eventEmitter.on('toggleCart', toggleCart);
+
+    return () => {
+      eventEmitter.off('toggleCart', toggleCart);
+    };
+  }, []);
+
+  if (!isOpen) return null;
+
   return ReactDOM.createPortal(
     <div className="cart-overlay">
       <div className="cart-modal">
@@ -13,7 +27,7 @@ const Cart = () => {
           <li>Item 3 - INR 150</li>
         </ul>
         <div className="cart-actions">
-          <button>Close</button>
+          <button onClick={() => eventEmitter.emit('toggleCart')}>Close</button>
           <button>Order</button>
         </div>
       </div>

@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import eventEmitter from '../../EventEmitter/EventEmitter';
 
 const HeaderCartButton = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const openCart = () => {
+    eventEmitter.emit('toggleCart');
+  };
   return (
     <>
-      <button onClick={() => setIsCartOpen(true)}>Cart</button>
+      <button className="header-cart-button" onClick={openCart}>
+        Cart
+      </button>
     </>
   );
 };

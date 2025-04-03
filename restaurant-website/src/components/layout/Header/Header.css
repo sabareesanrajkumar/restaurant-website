@@ -28,18 +28,18 @@
   }
 
 
-button{
+.header-cart-button{
   all:unset;
   position: absolute;
   margin-left: 980px;
-  z-index: 10;
+  z-index: 200002;
   background-color: rgb(239, 246, 246);
   color:rgb(15, 48, 28);
   padding:8px 20px;
   border-radius:5px;
 }
 
-button:hover{
+.header-cart-button:hover{
   background-color: rgb(121, 124, 124);
   color:rgb(255, 255, 255);
 }

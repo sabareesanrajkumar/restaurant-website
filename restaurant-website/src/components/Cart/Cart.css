@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 5;
   }
   
   .cart-modal {
@@ -17,6 +17,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
+    height: 350px;
     text-align: center;
   }
   
@@ -49,7 +50,11 @@
   }
   
   .cart-actions button:first-child {
-    background: #ccc;
+    background: #fcfcfc;
+  }
+
+  .cart-actions button:first-child:hover {
+    background: #5e5d5d;
   }
   
   .cart-actions button:last-child {
@@ -57,14 +62,7 @@
     color: white;
   }
   
-  .cart-icon {
-    padding: 10px 15px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    background: #007bff;
-    color: white;
-    border-radius: 5px;
-    margin: 20px;
+  .cart-actions button:last-child:hover {
+    background: #12421e;
   }
   
