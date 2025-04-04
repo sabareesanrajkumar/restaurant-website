@@ -34,6 +34,10 @@
     padding: 5px 0;
     font-size: 1rem;
   }
+  .cart-modal ul button {
+    padding: 5px 0;
+    font-size: 1rem;
+  }
   
   .cart-actions {
     margin-top: 15px;
@@ -64,4 +68,19 @@
   .cart-actions button:last-child:hover {
     background: #12421e;
   }
+ 
+  .cart-item{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cart-item button{
+    all:unset;
+    color: rgb(150, 2, 2);
+  }
+
   
+  .cart-item button:hover{
+    color: red;
+    text-shadow: 0 0 8px rgb(240, 150, 150);
+  }

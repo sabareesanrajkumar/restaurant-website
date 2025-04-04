@@ -6,7 +6,7 @@ import { CartContext } from '../Cart/CartProvider';
 
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, deleteFromCart } = useContext(CartContext);
 
   useEffect(() => {
     const toggleCart = () => setIsOpen((prev) => !prev);
@@ -28,10 +28,13 @@ const Cart = () => {
         ) : (
           <ul>
             {cartItems.map((item, index) => (
-              <li key={index}>
-                {item.title} - INR{item.price} x {item.quantity} = INR
-                {item.price * item.quantity}
-              </li>
+              <div className="cart-item" key={index}>
+                <li>
+                  {item.title} - INR{item.price} x {item.quantity} = INR
+                  {item.price * item.quantity}
+                </li>
+                <button onClick={() => deleteFromCart(item)}>Remove</button>
+              </div>
             ))}
           </ul>
         )}

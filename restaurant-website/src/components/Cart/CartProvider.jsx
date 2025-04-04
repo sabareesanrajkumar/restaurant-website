@@ -35,8 +35,16 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  const deleteFromCart = (item) => {
+    setCartItems((prevCart) => {
+      return prevCart.filter((cartItem) => cartItem.title !== item.title);
+    });
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, deleteFromCart }}
+    >
       {children}
     </CartContext.Provider>
   );
