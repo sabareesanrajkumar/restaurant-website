@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ReactDOM from 'react-dom';
 import './Cart.css';
 import eventEmitter from '../EventEmitter/EventEmitter';
+import { CartContext } from '../Cart/CartProvider';
 
-const Cart = ({ cartItems }) => {
+const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { cartItems } = useContext(CartContext);
 
   useEffect(() => {
     const toggleCart = () => setIsOpen((prev) => !prev);
